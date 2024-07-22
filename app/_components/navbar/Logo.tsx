@@ -8,7 +8,7 @@ const Logo = () => {
 
   return (
     <Image
-      src="/images/airbnblogo.png"
+      src="/images/logo.png"
       alt="Logo"
       width={100}
       height={100}
