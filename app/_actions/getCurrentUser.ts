@@ -25,8 +25,20 @@ export default async function getCurrentUser() {
       return null;
     }
 
-    return currentUser;
-  } catch (error) {
+    // return currentUser;
+    // Fix: Convert the user object to a safe user object
+    const safeCurrentUser = currentUser
+      ? {
+          ...currentUser,
+          createdAt: currentUser.createdAt.toISOString(),
+          updatedAt: currentUser.updatedAt.toISOString(),
+          emailVerified: currentUser.emailVerified
+            ? currentUser.emailVerified.toISOString()
+            : null,
+        }
+      : null;
+    return safeCurrentUser;
+  } catch {
     return null;
   }
 }
