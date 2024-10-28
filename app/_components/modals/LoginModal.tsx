@@ -63,7 +63,7 @@ const LoginModal = () => {
 
   const bodyContent = (
     <div className="flex flex-col gap-4">
-      <Heading title="Welcome Back!" subtitle="Login to continue" center />
+      <Heading title="Welcome to Airbnb" subtitle="Login to continue" center />
 
       <Input
         id="email"
