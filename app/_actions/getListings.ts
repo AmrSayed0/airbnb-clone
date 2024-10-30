@@ -24,7 +24,8 @@ export default async function getListings(params: IListingParams) {
       category,
     } = params;
 
-    let query: any = {};
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const query: any = {};
 
     if (userId) {
       query.userId = userId;
@@ -88,7 +89,7 @@ export default async function getListings(params: IListingParams) {
     }));
 
     return safeListings;
-  } catch (error: any) {
-    throw new Error(error);
+  } catch (error) {
+    throw new Error(String(error));
   }
 }

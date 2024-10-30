@@ -25,6 +25,7 @@ const CategoryBox = ({ icon: Icon, label, selected }: CategoryBoxProps) => {
     }
 
     // 3. spread the current query object and add the category key
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const updatedQuery: any = {
       ...currentQuery,
       category: label,

@@ -21,7 +21,7 @@ export async function POST(req: Request, { params }: { params: IParams }) {
     throw new Error("Invalid ID");
   }
 
-  let favoriteIds = [...(currentUser.favoriteIds || [])];
+  const favoriteIds = [...(currentUser.favoriteIds || [])];
 
   // push the new listingId to the favoriteIds array
   favoriteIds.push(listingId);

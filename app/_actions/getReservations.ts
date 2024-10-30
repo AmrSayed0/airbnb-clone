@@ -10,6 +10,7 @@ export default async function getReservations(params: IParams) {
   try {
     const { listingId, userId, authorId } = params;
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const query: any = {};
 
     if (listingId) {
@@ -46,7 +47,7 @@ export default async function getReservations(params: IParams) {
     }));
 
     return safeReservations;
-  } catch (error: any) {
-    throw new Error(error);
+  } catch (error) {
+    throw new Error(String(error));
   }
 }
