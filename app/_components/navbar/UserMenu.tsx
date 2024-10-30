@@ -8,12 +8,13 @@ import MenuItem from "./MenuItem";
 import useRegisterModal from "@/app/_hooks/useRegisterModal";
 import useLoginModal from "@/app/_hooks/useLoginModal";
 import useRentModal from "@/app/_hooks/useRentModal";
-import { User } from "@prisma/client";
+// import { User } from "@prisma/client";
 import { signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { SafeUser } from "@/app/_types";
 
 interface UserMenuProps {
-  currentUser?: User | null;
+  currentUser?: SafeUser | null;
 }
 
 const UserMenu = ({ currentUser }: UserMenuProps) => {
