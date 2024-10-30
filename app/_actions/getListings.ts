@@ -90,6 +90,6 @@ export default async function getListings(params: IListingParams) {
 
     return safeListings;
   } catch (error) {
-    throw new Error(String(error));
+    console.error("Error: ", error);
   }
 }

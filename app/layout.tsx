@@ -10,6 +10,7 @@ import RentModal from "./_components/modals/RentModal";
 import ToasterProvider from "./_providers/ToasterProvider";
 import getCurrentUser from "./_actions/getCurrentUser";
 import SearchModal from "./_components/modals/SearchModal";
+import { Suspense } from "react";
 
 const font = Nunito({
   subsets: ["latin"],
@@ -30,13 +31,15 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <ToasterProvider />
-        <SearchModal />
-        <LoginModal />
-        <RentModal />
-        <RegisterModal />
-        <Navbar currentUser={currentUser} />
-        <div className="pb-20 pt-28">{children}</div>
+        <Suspense>
+          <ToasterProvider />
+          <SearchModal />
+          <LoginModal />
+          <RentModal />
+          <RegisterModal />
+          <Navbar currentUser={currentUser} />
+          <div className="pb-20 pt-28">{children}</div>
+        </Suspense>
       </body>
     </html>
   );

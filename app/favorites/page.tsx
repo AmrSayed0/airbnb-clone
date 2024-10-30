@@ -5,7 +5,7 @@ import getFavoriteListings from "../_actions/getFavoriteListings";
 import FavoritesClient from "./FavoritesClient";
 
 const FavoritePage = async () => {
-  const listings = await getFavoriteListings();
+  const listings = (await getFavoriteListings()) || [];
   const currentUser = await getCurrentUser();
 
   if (listings.length === 0) {
